@@ -40,7 +40,7 @@ const bankAccount = {
         const checkValid = () => {
             if (this.balance >= 0) {
                 console.log("Invalid balance");
-                alert ("Kasib!limiti kecirsen,meblegi duzgun daxil et!")
+               
                 return;
             }
             this.balance -= m;
