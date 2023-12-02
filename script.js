@@ -38,8 +38,9 @@ const bankAccount = {
 
     withdraw: function (m) {
         const checkValid = () => {
-            if (this.balance >= 0) {
-                console.log("Invalid balance");
+            if (this.balance < m) {
+                alert("Kasib,limit yoxdur");
+               
                
                 return;
             }
@@ -63,6 +64,7 @@ const bankAccount = {
 
     show: function (m) {
         const thisObj = this;
+
         function handleMonitor() {
             console.log(thisObj.balance);
             console.log(thisObj.report);
@@ -97,9 +99,9 @@ showBtn.addEventListener("click", function () {
 
     const newContent = bankAccount.report.map (( item, index) => `
     <tr>
-    <th scope="row">${index+1}</th>
+    <th scope="row">${index + 1}</th>
     <td>${item.type}</td>
-    <td class="text-${item.type == "Cash "? "success" : "danger"}">${item.type == "Cash"? "+" + item.amount : "-" + item.amount}</td>
+    <td class="text-${item.type == "Cash" ? "success" : "danger"}">${item.type == "Cash"? "+" + item.amount : "-" + item.amount}</td>
     <td>${item.created}</td>
   </tr>
 
